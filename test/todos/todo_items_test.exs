@@ -1,9 +1,9 @@
 defmodule Todos.TodoItemsTest do
-  alias Todos.TodoItems
+  alias Todos.{TodoItems, Repo}
   use ExUnit.Case
 
   setup do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Repo, self)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Repo)
   end
 
   test "adding and retrieving todo items" do
